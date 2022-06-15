@@ -1,0 +1,45 @@
+.container{
+    width:100vw;
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.error{
+    color:red;
+    font-size: 12px;
+    margin:0;
+    padding-left:30px;
+}
+
+.myFrom{
+    display:flex;
+    border-radius: .3rem;
+    flex-direction: column;
+    width:70%;
+    box-shadow:0px 2px 5px rgb(0,0,0);
+    padding:10px 0px;
+}
+
+mat-form-field{
+    padding:5px 20px 0px 20px;
+}
+
+mat-password-strength{
+    width:94%;
+    margin: auto;
+}
+
+button{
+    padding:5px 20px 0px 20px;
+    margin: 0px 20px;
+    font-size: 1.5rem;
+}
+
+.no-account-yet{
+    display:flex;
+    margin-right: 30px;
+    justify-content: flex-end;
+}
