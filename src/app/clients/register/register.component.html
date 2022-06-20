@@ -1,28 +1,32 @@
 <div class="container">
     <h2>Sign-Up</h2>
     <form class="myFrom" [formGroup]="profileFrom" (ngSubmit)="onSubmit()">
-      <mat-form-field class="example-full-width" appearance="fill">
+      <mat-form-field class="example-full-width">
         <mat-label>Name</mat-label>
         <input matInput placeholder="John Doe" formControlName="userCompleteName">
       </mat-form-field>
       <p class="error" *ngIf="profileFrom.get('email')?.invalid && profileFrom.value.email.length>0">invalid email</p>
-      <mat-form-field class="example-full-width" appearance="fill">
+      <mat-form-field class="example-full-width">
         <mat-label>Email</mat-label>
         <input type="email"  matInput placeholder="JohnDoe123" formControlName="email">
       </mat-form-field>
-
+      
+      
+      
+      <mat-form-field class="example-full-width">
+        <mat-label>Password</mat-label>
+        <input 
+        type="password"
+        matInput placeholder="Enter your secret password" 
+        formControlName="password"
+        (input)="isNotEmptyPassword()">
+      </mat-form-field>
       <mat-password-strength 
+        style="box-shadow: none; border:none; padding:10px 0px"
         #passwordComponent
-        [password]="profileFrom.value.password" 
-        (onStrengthChanged)="onStrengthChanged($event)">
+        [password]="profileFrom.value.password" >
       </mat-password-strength>
       
-
-      <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Password</mat-label>
-        <input type="password" matInput placeholder="Enter your secret password" formControlName="password">
-     </mat-form-field>
-
      <mat-password-strength-info
         *ngIf="isInteract"
         [passwordComponent]="passwordComponent"
@@ -30,11 +34,10 @@
         [enableScoreInfo]="false">
      </mat-password-strength-info>
 
-     <button mat-raised-button color="primary" [disabled]="!profileFrom.valid">Login</button>
+     <button 
+        mat-raised-button color="primary" 
+        [disabled]="!profileFrom.valid">Login</button>
      <p class="no-account-yet"><a routerLink="/">Already Have an Account?</a></p>
-
-     
-
 
     </form>
   </div>
